@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  {% if title %}
+  <title>{{ title }} | Guestbook</title>
+  {% else %}
+  <title>Guestbook</title>
+  {% endif %}
+</head>
+
+<body>
+  <header>
+    <nav style="height: 28px;">
+      <div style="display:flex; justify-content: space-between;">
+        <div>
+          <a href="/">Home</a>
+          <a href="/create-post">Create a new post</a>
+        </div>
+        {% if user %}
+          <div style="display:flex; align-items: center; gap: 1ch;">
+            <img alt="{{user.name}}'s avatar." src="/api/users/{{user.identifier}}/avatar" width="24"/>
+            <p style="margin:0">
+              {{user.name}}
+            </p>
+            <form method="POST" action="/logout">
+              <button>Logout</button>
+            </form>
+          </div>
+        {% else %}
+          <a href="/login">Login</a>
+        {% endif %}
+      </div>
+    </nav>
+  </header>
+  <hr>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+
+</html>

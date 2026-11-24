@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Create a new post</h1>
+<form method="post" action="?" enctype="multipart/form-data">
+  <p>
+    <label for="content">Content:<label><br/>
+    <input name="content" id="content">
+  </p>
+  <button>Create post</button>
+</form>
+{% endblock %}

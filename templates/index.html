@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div>
+  <a href="{{toggle_url}}">Toggle ordering</a>
+</div>
+<ul>
+  {% for item in items %}
+  <li>
+    <article>
+      <p>{{item.content}}</p>
+      <p>
+          By {{item.author}} at
+          {{item.created_at | datetime }}
+      </p>
+    </article>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

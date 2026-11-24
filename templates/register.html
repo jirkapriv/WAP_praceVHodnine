@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Register</h1>
+<p>{{message}}</p>
+<form method="post" action="" enctype="multipart/form-data">
+  <p>
+    <label>Username:<br/>
+      <input name="username" required value="{{username}}">
+    </label>
+  </p>
+  <p>
+    <label>Password:<br/>
+      <input type="password" name="password" required>
+    </label>
+  </p>
+  <p>
+    <label>Avatar:<br/>
+      <input type="file" name="avatar" required>
+    </label>
+  </p>
+  <button>Register</button>
+</form>
+{% endblock %}
